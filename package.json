@@ -1,7 +1,7 @@
 {
-  "name": "sort-package-json",
+  "name": "sort-package-json-rs",
   "version": "0.0.1",
-  "description": "Node.js bindings for OXC's sort-package-json.",
+  "description": "OXC's sort-package-json binding to Node.js",
   "main": "index.js",
   "types": "index.d.ts",
   "browser": "browser.js",
@@ -12,7 +12,8 @@
     "package.json",
     "properties",
     "sort",
-    "node-bindings"
+    "napi",
+    "napi-rs"
   ],
   "files": [
     "index.d.ts",
