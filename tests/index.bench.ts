@@ -1,3 +1,4 @@
+// From https://github.com/oxc-project/sort-package-json/blob/main/benches/sort.rs
 import OriginalSortPackageJson from 'sort-package-json'
 import { bench, describe } from 'vitest'
 import { sortPackageJson } from '../index.js'
