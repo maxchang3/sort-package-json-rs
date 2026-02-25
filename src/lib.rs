@@ -26,5 +26,6 @@ pub fn sort_package_json(input: String) -> Result<String> {
 
 #[napi]
 pub fn sort_package_json_with_options(input: String, options: SortOptions) -> Result<String> {
-  spj::sort_package_json_with_options(&input, &options.into()).map_err(|e| Error::from_reason(e.to_string()))
+  spj::sort_package_json_with_options(&input, &options.into())
+    .map_err(|e| Error::from_reason(e.to_string()))
 }
