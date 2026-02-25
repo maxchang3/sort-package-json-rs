@@ -47,7 +47,7 @@
   },
   "scripts": {
     "artifacts": "napi artifacts",
-    "bench": "node --import @oxc-node/core/register benchmark/bench.ts",
+    "bench": "vitest bench",
     "build": "napi build --platform --release",
     "build:debug": "napi build --platform",
     "format": "run-p format:rs format:toml",
@@ -55,7 +55,7 @@
     "format:rs": "cargo fmt",
     "lint": "biome check",
     "prepublishOnly": "napi prepublish -t npm",
-    "test": "ava",
+    "test": "vitest run",
     "version": "napi version",
     "lint:fix": "biome check --write .",
     "prepare": "simple-git-hooks"
@@ -66,17 +66,15 @@
     "@emnapi/runtime": "^1.5.0",
     "@napi-rs/cli": "^3.2.0",
     "@napi-rs/wasm-runtime": "^1.0.4",
-    "@oxc-node/core": "^0.0.35",
     "@taplo/cli": "^0.7.0",
     "@tybys/wasm-util": "^0.10.0",
-    "ava": "^6.4.1",
     "chalk": "^5.6.2",
     "emnapi": "^1.5.0",
     "lint-staged": "^16.2.7",
     "npm-run-all2": "^8.0.4",
     "simple-git-hooks": "^2.13.1",
-    "tinybench": "^6.0.0",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "vitest": "^4.0.18"
   },
   "lint-staged": {
     "*.toml": [
@@ -84,20 +82,6 @@
     ],
     "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
       "biome check --no-errors-on-unmatched --files-ignore-unknown=true"
-    ]
-  },
-  "ava": {
-    "extensions": {
-      "ts": "module"
-    },
-    "timeout": "2m",
-    "workerThreads": false,
-    "environmentVariables": {
-      "TS_NODE_PROJECT": "./tsconfig.json"
-    },
-    "nodeArguments": [
-      "--import",
-      "@oxc-node/core/register"
     ]
   },
   "packageManager": "pnpm@10.30.2",
