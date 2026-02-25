@@ -15,7 +15,7 @@ pub struct SortOptions {
 
 impl From<SortOptions> for spj::SortOptions {
   fn from(options: SortOptions) -> Self {
-    spj::SortOptions {
+    Self {
       pretty: options.pretty,
       sort_scripts: options.sort_scripts,
     }
