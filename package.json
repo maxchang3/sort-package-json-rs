@@ -2,6 +2,10 @@
   "name": "sort-package-json-rs",
   "version": "0.0.1",
   "description": "Node.js bindings for OXC(oxfmt)'s package.json sorter",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maxchang3/sort-package-json-rs.git"
+  },
   "main": "index.js",
   "types": "index.d.ts",
   "browser": "browser.js",
