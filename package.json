@@ -1,7 +1,7 @@
 {
   "name": "sort-package-json-rs",
   "version": "0.0.1",
-  "description": "OXC's sort-package-json binding to Node.js",
+  "description": "Node.js bindings for OXC(oxfmt)'s package.json sorter",
   "main": "index.js",
   "types": "index.d.ts",
   "browser": "browser.js",
