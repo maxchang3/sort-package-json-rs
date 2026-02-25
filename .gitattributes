@@ -1,4 +1,4 @@
 *.js linguist-vendored
 *.mjs linguist-vendored
 *.cjs linguist-vendored
-index.d.ts linguist-vendored
+*.d.ts linguist-vendored
