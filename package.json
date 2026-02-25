@@ -1,6 +1,6 @@
 {
   "name": "sort-package-json-rs",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Node.js bindings for OXC(oxfmt)'s package.json sorter",
   "keywords": [
     "docs",
