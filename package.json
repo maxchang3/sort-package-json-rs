@@ -2,28 +2,83 @@
   "name": "sort-package-json-rs",
   "version": "0.0.0",
   "description": "Node.js bindings for OXC(oxfmt)'s package.json sorter",
+  "keywords": [
+    "docs",
+    "napi",
+    "napi-rs",
+    "npmjs",
+    "package.json",
+    "properties",
+    "sort"
+  ],
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/maxchang3/sort-package-json-rs.git"
   },
-  "main": "index.js",
-  "types": "index.d.ts",
-  "browser": "browser.js",
-  "license": "MIT",
-  "keywords": [
-    "docs",
-    "npmjs",
-    "package.json",
-    "properties",
-    "sort",
-    "napi",
-    "napi-rs"
-  ],
   "files": [
     "index.d.ts",
     "index.js",
     "browser.js"
   ],
+  "main": "index.js",
+  "browser": "browser.js",
+  "types": "index.d.ts",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "artifacts": "napi artifacts",
+    "bench": "vitest bench --run",
+    "build": "napi build --platform --release",
+    "build:debug": "napi build --platform",
+    "format": "run-p format:rs format:toml format:pkg-json",
+    "format:toml": "taplo format",
+    "format:rs": "cargo fmt",
+    "format:biome": "biome format --write .",
+    "format:pkg-json": "node scripts/sort.js",
+    "lint": "biome lint",
+    "lint:fix": "biome lint --write .",
+    "docs:sync": "pnpx automd",
+    "prepublishOnly": "napi prepublish -t npm",
+    "test": "vitest run",
+    "version": "napi version",
+    "prepare": "simple-git-hooks"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.4",
+    "@emnapi/core": "^1.5.0",
+    "@emnapi/runtime": "^1.5.0",
+    "@maxchang/biome-config": "^0.1.8",
+    "@napi-rs/cli": "^3.2.0",
+    "@napi-rs/wasm-runtime": "^1.0.4",
+    "@taplo/cli": "^0.7.0",
+    "@tybys/wasm-util": "^0.10.0",
+    "@types/node": "^25.3.0",
+    "chalk": "^5.6.2",
+    "emnapi": "^1.5.0",
+    "lint-staged": "^16.2.7",
+    "npm-run-all2": "^8.0.4",
+    "simple-git-hooks": "^2.13.1",
+    "sort-package-json": "^3.6.1",
+    "typescript": "^5.9.2",
+    "vitest": "^4.0.18"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm dlx lint-staged"
+  },
+  "lint-staged": {
+    "*.toml": [
+      "taplo format"
+    ],
+    "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
+      "biome check --no-errors-on-unmatched --files-ignore-unknown=true"
+    ],
+    "*.md": [
+      "pnpm run docs:sync"
+    ]
+  },
   "napi": {
     "binaryName": "sort-package-json",
     "targets": [
@@ -46,58 +101,5 @@
   "engines": {
     "node": ">= 10"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
-  },
-  "scripts": {
-    "artifacts": "napi artifacts",
-    "bench": "vitest bench --run",
-    "build": "napi build --platform --release",
-    "build:debug": "napi build --platform",
-    "format": "run-p format:rs format:toml",
-    "format:toml": "taplo format",
-    "format:rs": "cargo fmt",
-    "format:biome": "biome format --write .",
-    "lint": "biome lint",
-    "lint:fix": "biome lint --write .",
-    "docs:sync": "pnpx automd",
-    "prepublishOnly": "napi prepublish -t npm",
-    "test": "vitest run",
-    "version": "napi version",
-    "prepare": "simple-git-hooks"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^2.4.4",
-    "@emnapi/core": "^1.5.0",
-    "@emnapi/runtime": "^1.5.0",
-    "@maxchang/biome-config": "^0.1.8",
-    "@napi-rs/cli": "^3.2.0",
-    "@napi-rs/wasm-runtime": "^1.0.4",
-    "@taplo/cli": "^0.7.0",
-    "@tybys/wasm-util": "^0.10.0",
-    "chalk": "^5.6.2",
-    "emnapi": "^1.5.0",
-    "lint-staged": "^16.2.7",
-    "npm-run-all2": "^8.0.4",
-    "simple-git-hooks": "^2.13.1",
-    "sort-package-json": "^3.6.1",
-    "typescript": "^5.9.2",
-    "vitest": "^4.0.18"
-  },
-  "lint-staged": {
-    "*.toml": [
-      "taplo format"
-    ],
-    "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
-      "biome check --no-errors-on-unmatched --files-ignore-unknown=true"
-    ],
-    "*.md": [
-      "pnpm run docs:sync"
-    ]
-  },
-  "packageManager": "pnpm@10.30.2",
-  "simple-git-hooks": {
-    "pre-commit": "pnpm dlx lint-staged"
-  }
+  "packageManager": "pnpm@10.30.2"
 }
