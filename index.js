@@ -557,5 +557,5 @@ if (!nativeBinding) {
 }
 
 module.exports = nativeBinding
-module.exports.sort = nativeBinding.sort
-module.exports.sortWithOptions = nativeBinding.sortWithOptions
+module.exports.sortPackageJson = nativeBinding.sortPackageJson
+module.exports.sortPackageJsonWithOptions = nativeBinding.sortPackageJsonWithOptions

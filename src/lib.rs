@@ -1,12 +1,8 @@
 #![deny(clippy::all)]
 
+use napi::bindgen_prelude::*;
 use napi_derive::napi;
 use sort_package_json as spj;
-
-#[napi]
-pub fn sort(input: String) -> Result<String, napi::Error> {
-  spj::sort_package_json(&input).map_err(|e| napi::Error::new(napi::Status::GenericFailure, e.to_string()))
-}
 
 #[napi(object)]
 pub struct SortOptions {
@@ -24,6 +20,11 @@ impl From<SortOptions> for spj::SortOptions {
 }
 
 #[napi]
-pub fn sort_with_options(input: String, options: SortOptions) -> Result<String, napi::Error> {
-  spj::sort_package_json_with_options(&input, &options.into()).map_err(|e| napi::Error::new(napi::Status::GenericFailure, e.to_string()))
+pub fn sort_package_json(input: String) -> Result<String> {
+  spj::sort_package_json(&input).map_err(|e| Error::from_reason(e.to_string()))
+}
+
+#[napi]
+pub fn sort_package_json_with_options(input: String, options: SortOptions) -> Result<String> {
+  spj::sort_package_json_with_options(&input, &options.into()).map_err(|e| Error::from_reason(e.to_string()))
 }

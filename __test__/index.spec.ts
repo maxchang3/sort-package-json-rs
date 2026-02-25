@@ -1,6 +1,6 @@
 import test from 'ava'
 
-import { sort, sortWithOptions } from '../index.js'
+import { sortPackageJson, sortPackageJsonWithOptions } from '../index.js'
 
 test('sort function with default options', (t) => {
   const pkg = `{
@@ -19,7 +19,7 @@ test('sort function with default options', (t) => {
     "description": "My awesome package"
   }`
 
-  const result = sort(pkg)
+  const result = sortPackageJson(pkg)
   t.true(typeof result === 'string')
   t.true(result.includes('"name": "my-package"'))
   t.true(result.includes('"version": "1.0.0"'))
@@ -43,7 +43,7 @@ test('sort function with custom options', (t) => {
     "description": "My awesome package"
   }`
 
-  const result = sortWithOptions(pkg, { pretty: false, sortScripts: true })
+  const result = sortPackageJsonWithOptions(pkg, { pretty: false, sortScripts: true })
   t.true(typeof result === 'string')
   t.true(result.includes('"scripts":{"build":"tsc","dev":"webpack serve","test":"jest"'))
 })
