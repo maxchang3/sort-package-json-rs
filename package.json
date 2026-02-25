@@ -47,7 +47,7 @@
   },
   "scripts": {
     "artifacts": "napi artifacts",
-    "bench": "vitest bench",
+    "bench": "vitest bench --run",
     "build": "napi build --platform --release",
     "build:debug": "napi build --platform",
     "format": "run-p format:rs format:toml",
