@@ -57,6 +57,7 @@
     "format:biome": "biome format --write .",
     "lint": "biome lint",
     "lint:fix": "biome lint --write .",
+    "docs:sync": "pnpx automd",
     "prepublishOnly": "napi prepublish -t npm",
     "test": "vitest run",
     "version": "napi version",
@@ -84,6 +85,9 @@
     ],
     "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
       "biome check --no-errors-on-unmatched --files-ignore-unknown=true"
+    ],
+    "*.md": [
+      "pnpm run docs:sync"
     ]
   },
   "packageManager": "pnpm@10.30.2",
