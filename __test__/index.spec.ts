@@ -1,8 +1,49 @@
 import test from 'ava'
 
-import { plus100 } from '../index.js'
+import { sort, sortWithOptions } from '../index.js'
 
-test('sync function from native code', (t) => {
-  const fixture = 42
-  t.is(plus100(fixture), fixture + 100)
+test('sort function with default options', (t) => {
+  const pkg = `{
+    "dependencies": {
+      "react": "^18.0.0",
+      "typescript": "^5.0.0",
+      "lodash": "^4.17.0"
+    },
+    "name": "my-package",
+    "version": "1.0.0",
+    "scripts": {
+      "build": "tsc",
+      "test": "jest",
+      "dev": "webpack serve"
+    },
+    "description": "My awesome package"
+  }`
+
+  const result = sort(pkg)
+  t.true(typeof result === 'string')
+  t.true(result.includes('"name": "my-package"'))
+  t.true(result.includes('"version": "1.0.0"'))
+  t.true(result.includes('"description": "My awesome package"'))
+})
+
+test('sort function with custom options', (t) => {
+  const pkg = `{
+    "dependencies": {
+      "react": "^18.0.0",
+      "typescript": "^5.0.0",
+      "lodash": "^4.17.0"
+    },
+    "name": "my-package",
+    "version": "1.0.0",
+    "scripts": {
+      "build": "tsc",
+      "test": "jest",
+      "dev": "webpack serve"
+    },
+    "description": "My awesome package"
+  }`
+
+  const result = sortWithOptions(pkg, { pretty: false, sortScripts: true })
+  t.true(typeof result === 'string')
+  t.true(result.includes('"scripts":{"build":"tsc","dev":"webpack serve","test":"jest"'))
 })

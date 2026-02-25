@@ -1,9 +1,7 @@
 [package]
 edition = "2021"
-name = "napi-package-template"
-version = "0.1.0"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+name = "napi-sort-package-json"
+version = "0.0.1"
 
 [lib]
 crate-type = ["cdylib"]
@@ -11,6 +9,7 @@ crate-type = ["cdylib"]
 [dependencies]
 napi = "3.0.0"
 napi-derive = "3.0.0"
+sort-package-json = "0.0.10"
 
 [build-dependencies]
 napi-build = "2"

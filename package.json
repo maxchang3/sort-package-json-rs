@@ -1,22 +1,18 @@
 {
-  "name": "@napi-rs/package-template-pnpm",
-  "version": "1.1.1",
-  "description": "Template project for writing node package with napi-rs",
+  "name": "sort-package-json",
+  "version": "0.0.1",
+  "description": "Node.js bindings for OXC's sort-package-json.",
   "main": "index.js",
   "types": "index.d.ts",
   "browser": "browser.js",
-  "repository": {
-    "url": "git+ssh://git@github.com/napi-rs/package-template-pnpm.git",
-    "type": "git"
-  },
   "license": "MIT",
   "keywords": [
-    "napi-rs",
-    "NAPI",
-    "N-API",
-    "Rust",
-    "node-addon",
-    "node-addon-api"
+    "docs",
+    "npmjs",
+    "package.json",
+    "properties",
+    "sort",
+    "node-bindings"
   ],
   "files": [
     "index.d.ts",
@@ -24,7 +20,7 @@
     "browser.js"
   ],
   "napi": {
-    "binaryName": "package-template",
+    "binaryName": "sort-package-json",
     "targets": [
       "x86_64-apple-darwin",
       "aarch64-apple-darwin",
