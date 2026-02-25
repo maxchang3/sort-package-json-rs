@@ -8,6 +8,8 @@ Node.js bindings for OXC(oxfmt)'s package.json sorter.
 [![npm downloads](https://img.shields.io/npm/dm/sort-package-json-rs?color=yellow)](https://npm.chart.dev/sort-package-json-rs)
 [![bundle size](https://img.shields.io/bundlephobia/minzip/sort-package-json-rs?color=yellow)](https://bundlephobia.com/package/sort-package-json-rs)
 [![install size](https://badgen.net/packagephobia/install/sort-package-json-rs?color=yellow)](https://packagephobia.com/result?p=sort-package-json-rs)
+[![codecov](https://img.shields.io/codecov/c/gh/maxchang3/sort-package-json-rs?color=yellow)](https://codecov.io/gh/maxchang3/sort-package-json-rs)
+[![license](https://img.shields.io/github/license/maxchang3/sort-package-json-rs?color=yellow)](https://github.com/maxchang3/sort-package-json-rs/blob/main/LICENSE)
 
 <!-- /automd -->
 
@@ -96,7 +98,7 @@ Using [tests/index.bench.ts](./tests/index.bench.ts) with `pnpm bench`:
 | Minimal package.json        | 139,344.74    | 907,643.81      | 6.51x ⚡ |
 | Large package.json          | 42,820.94     | 72,237.26       | 1.69x ⚡ |
 
-*Executed on an Apple M1 Pro (8-core CPU) with Node.js v23.7.0.*
+*Executed on an MacBook Air (M1, 2020, 16GB RAM) with Node.js v23.7.0.*
 
 ## License
 
