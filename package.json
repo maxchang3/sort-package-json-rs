@@ -14,7 +14,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/maxchang3/sort-package-json-rs.git"
+    "url": "git+https://github.com/maxchang3/sort-package-json-rs.git"
   },
   "bin": {
     "sort-package-json-rs": "cli/index.js"
