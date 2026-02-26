@@ -147,7 +147,7 @@ export declare function sortPackageJson(input: string, options?: SortOptions | u
 
 ## Benchmarks
 
-Using [tests/index.bench.ts](./tests/index.bench.ts) with `pnpm bench`:
+Using [tests/index.bench.ts](./tests/index.bench.ts) with `vitest bench`:
 
 | Test Case                   | Original (hz) | RS Binding (hz) | Speedup |
 | --------------------------- | ------------- | --------------- | ------- |
