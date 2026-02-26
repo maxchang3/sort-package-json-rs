@@ -39,7 +39,7 @@
     "build": "napi build --esm --platform --release",
     "build:debug": "napi build --esm --platform",
     "docs:sync": "pnpx automd",
-    "format": "run-p format:rs format:toml format:pkg-json",
+    "format": "run-p format:rs format:biome format:toml format:pkg-json",
     "format:biome": "biome format --write .",
     "format:pkg-json": "node cli/index.js",
     "format:rs": "cargo fmt",
