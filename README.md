@@ -1,6 +1,6 @@
 # sort-package-json-rs
 
-Node.js bindings for OXC(oxfmt)'s package.json sorter.
+Node.js bindings and CLI for OXC(oxfmt)'s `package.json` sorter.
 
 <!-- automd:badges color="yellow" license name="sort-package-json-rs" codecov bundlephobia packagephobia -->
 
@@ -17,7 +17,9 @@ Node.js bindings for OXC(oxfmt)'s package.json sorter.
 
 [oxc-project/sort-package-json](https://github.com/oxc-project/sort-package-json) is a fast Rust implementation for sorting `package.json` files. Inspired by [keithamus/sort-package-json](https://github.com/keithamus/sort-package-json), it serves as the underlying sorting engine for [oxfmt](https://oxc.rs/docs/guide/usage/formatter/sorting.html#sort-package-json-fields).
 
-This package provides Node.js bindings to OXC's implementation, enabling you to sort your `package.json` files efficiently and reliably from JavaScript.
+This package provides fast Node.js bindings to OXC's implementation, along with a CLI interface similar to the original `sort-package-json` package.
+
+> **Note on Compatibility**: `oxc-project/sort-package-json` is not strictly compatible with the original `sort-package-json` npm package. It uses a different sorting algorithm and field order, so the output may differ from the original package.
 
 ## Installation
 
@@ -42,7 +44,55 @@ deno install npm:sort-package-json-rs
 
 <!-- /automd -->
 
-## Usage
+## CLI
+
+Run it via npx, pnpm dlx, bunx, or deno run:
+
+<!-- automd:pm-x version="latest" name="sort-package-json-rs" -->
+
+```sh
+# npm
+npx sort-package-json-rs@latest
+
+# pnpm
+pnpm dlx sort-package-json-rs@latest
+
+# bun
+bunx sort-package-json-rs@latest
+
+# deno
+deno run -A npm:sort-package-json-rs@latest
+```
+
+<!-- /automd -->
+
+Usage Options
+
+```bash
+$ sort-package-json-rs --help
+sort-package-json-rs/0.0.2
+
+Usage:
+  $ sort-package-json-rs [...files]
+
+Commands:
+  [...files]  Sort package.json files
+
+For more info, run any command with the `--help` flag:
+  $ sort-package-json-rs --help
+
+Options:
+  -c, --check          Check if files are sorted without modifying them 
+  -q, --quiet          Don't output success messages 
+  --stdin              Read package.json from stdin 
+  -i, --ignore <glob>  Glob patterns to ignore (default: node_modules/**)
+  -v, --version        Display version number 
+  -h, --help           Display this message 
+```
+
+## API
+
+### Basic Usage
 
 ```javascript
 import { sortPackageJson } from 'sort-package-json-rs';
@@ -73,7 +123,7 @@ const compactSorted = sortPackageJson(JSON.stringify(unsorted), {
 console.log(compactSorted);
 ```
 
-## API
+### TypeScript Types
 
 <!-- automd:file src="./index.d.ts" code=true lang="typescript" lines=3: -->
 
@@ -107,6 +157,10 @@ Using [tests/index.bench.ts](./tests/index.bench.ts) with `pnpm bench`:
 | Large package.json          | 42,820.94     | 72,237.26       | 1.69x ⚡ |
 
 *Executed on an MacBook Air (M1, 2020, 16GB RAM) with Node.js v23.7.0.*
+
+## Credits
+
+Some code and tests are adapted from [keithamus/sort-package-json](keithamus/sort-package-json) and [oxc-project/sort-package-json](https://github.com/oxc-project/sort-package-json).
 
 ## License
 

@@ -1,7 +1,7 @@
 {
   "name": "sort-package-json-rs",
   "version": "0.0.2",
-  "description": "Node.js bindings for OXC(oxfmt)'s package.json sorter",
+  "description": "Node.js bindings and CLI for OXC(oxfmt)'s `package.json` sorter",
   "keywords": [
     "docs",
     "napi",
