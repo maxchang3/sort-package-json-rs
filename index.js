@@ -558,4 +558,3 @@ if (!nativeBinding) {
 
 module.exports = nativeBinding
 module.exports.sortPackageJson = nativeBinding.sortPackageJson
-module.exports.sortPackageJsonWithOptions = nativeBinding.sortPackageJsonWithOptions

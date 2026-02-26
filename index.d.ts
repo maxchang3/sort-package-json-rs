@@ -8,8 +8,8 @@ export interface SortOptions {
   sortScripts: boolean
 }
 
-/** Sorts a package.json string with default options (pretty-printed) */
-export declare function sortPackageJson(input: string): string
-
-/** Sorts a package.json string with custom options */
-export declare function sortPackageJsonWithOptions(input: string, options: SortOptions): string
+/**
+ * Sorts a package.json string with optional custom options
+ * If options is not provided, uses default options (pretty-printed)
+ */
+export declare function sortPackageJson(input: string, options?: SortOptions | undefined | null): string

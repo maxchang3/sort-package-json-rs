@@ -57,4 +57,3 @@ const {
 })
 export default __napiModule.exports
 export const sortPackageJson = __napiModule.exports.sortPackageJson
-export const sortPackageJsonWithOptions = __napiModule.exports.sortPackageJsonWithOptions

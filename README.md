@@ -45,7 +45,7 @@ deno install npm:sort-package-json-rs
 ## Usage
 
 ```javascript
-import { sortPackageJson } from 'sort-package-json';
+import { sortPackageJson } from 'sort-package-json-rs';
 
 const unsorted = {
   dependencies: {
@@ -61,8 +61,16 @@ const unsorted = {
   }
 };
 
-const sorted = sortPackageJson(unsorted);
+// Use default options (pretty-printed)
+const sorted = sortPackageJson(JSON.stringify(unsorted));
 console.log(sorted);
+
+// Or with custom options
+const compactSorted = sortPackageJson(JSON.stringify(unsorted), {
+  pretty: false,
+  sortScripts: true
+});
+console.log(compactSorted);
 ```
 
 ## API
@@ -78,11 +86,11 @@ export interface SortOptions {
   sortScripts: boolean
 }
 
-/** Sorts a package.json string with default options (pretty-printed) */
-export declare function sortPackageJson(input: string): string
-
-/** Sorts a package.json string with custom options */
-export declare function sortPackageJsonWithOptions(input: string, options: SortOptions): string
+/**
+ * Sorts a package.json string with optional custom options
+ * If options is not provided, uses default options (pretty-printed)
+ */
+export declare function sortPackageJson(input: string, options?: SortOptions | undefined | null): string
 ```
 
 <!-- /automd -->

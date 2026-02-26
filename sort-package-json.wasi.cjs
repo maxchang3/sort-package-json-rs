@@ -109,4 +109,3 @@ const { instance: __napiInstance, module: __wasiModule, napiModule: __napiModule
 })
 module.exports = __napiModule.exports
 module.exports.sortPackageJson = __napiModule.exports.sortPackageJson
-module.exports.sortPackageJsonWithOptions = __napiModule.exports.sortPackageJsonWithOptions
