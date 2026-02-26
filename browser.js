@@ -1,1 +1,1 @@
-export * from 'sort-package-json-rs-wasm32-wasi'
+export * from '@sort-package-json-rs/platform-wasm32-wasi'

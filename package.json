@@ -81,6 +81,7 @@
   },
   "napi": {
     "binaryName": "sort-package-json",
+    "packageName": "@sort-package-json-rs/platform",
     "targets": [
       "x86_64-apple-darwin",
       "aarch64-apple-darwin",
