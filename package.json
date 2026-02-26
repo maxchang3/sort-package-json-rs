@@ -16,11 +16,16 @@
     "type": "git",
     "url": "https://github.com/maxchang3/sort-package-json-rs.git"
   },
+  "bin": {
+    "sort-package-json-rs": "cli/index.js"
+  },
   "files": [
     "index.d.ts",
     "index.js",
-    "browser.js"
+    "browser.js",
+    "cli/**/*.js"
   ],
+  "type": "module",
   "main": "index.js",
   "browser": "browser.js",
   "types": "index.d.ts",
@@ -31,20 +36,24 @@
   "scripts": {
     "artifacts": "napi artifacts",
     "bench": "vitest bench --run",
-    "build": "napi build --platform --release",
-    "build:debug": "napi build --platform",
+    "build": "napi build --esm --platform --release",
+    "build:debug": "napi build --esm --platform",
+    "docs:sync": "pnpx automd",
     "format": "run-p format:rs format:toml format:pkg-json",
-    "format:toml": "taplo format",
-    "format:rs": "cargo fmt",
     "format:biome": "biome format --write .",
-    "format:pkg-json": "node scripts/sort.js",
+    "format:pkg-json": "node cli/index.js",
+    "format:rs": "cargo fmt",
+    "format:toml": "taplo format",
     "lint": "biome lint",
     "lint:fix": "biome lint --write .",
-    "docs:sync": "pnpx automd",
+    "prepare": "simple-git-hooks",
     "prepublishOnly": "napi prepublish -t npm",
     "test": "vitest run",
-    "version": "napi version",
-    "prepare": "simple-git-hooks"
+    "version": "napi version"
+  },
+  "dependencies": {
+    "cac": "^6.7.14",
+    "tinyglobby": "^0.2.15"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.4",

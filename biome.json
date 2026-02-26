@@ -3,6 +3,6 @@
   "extends": ["@maxchang/biome-config"],
   "files": {
     "ignoreUnknown": true,
-    "includes": ["!target", "!!.yarn", "!*.js", "!*.mjs", "!*.cjs", "!index.js", "!index.d.ts"]
+    "includes": ["cli/**/*", "!target", "!!.yarn", "!*.js", "!*.mjs", "!*.cjs", "!index.js", "!index.d.ts"]
   }
 }
