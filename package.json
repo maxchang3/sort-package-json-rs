@@ -12,6 +12,7 @@
     "sort"
   ],
   "license": "MIT",
+  "author": "maxchang3",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/maxchang3/sort-package-json-rs.git"
