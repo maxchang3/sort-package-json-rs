@@ -15,9 +15,11 @@ Node.js bindings and CLI for OXC(oxfmt)'s `package.json` sorter.
 
 ## Introduction
 
-[oxc-project/sort-package-json](https://github.com/oxc-project/sort-package-json) is a fast Rust implementation for sorting `package.json` files. Inspired by [keithamus/sort-package-json](https://github.com/keithamus/sort-package-json), it serves as the underlying sorting engine for [oxfmt](https://oxc.rs/docs/guide/usage/formatter/sorting.html#sort-package-json-fields).
+[oxc-project/sort-package-json](https://github.com/oxc-project/sort-package-json) is a high-performance Rust implementation for sorting `package.json` files, designed as a replacement for [`keithamus/sort-package-json`](https://github.com/keithamus/sort-package-json). It powers the **“Sort package.json fields”** feature in [oxfmt](https://oxc.rs/docs/guide/usage/formatter/sorting.html#sort-package-json-fields).
 
-This package provides fast Node.js bindings to OXC's implementation, along with a CLI interface similar to the original `sort-package-json` package.
+This package provides Node.js bindings for that implementation, along with a CLI that is similar to the original `sort-package-json`. 
+
+It can be used independently of oxfmt as a drop-in replacement for the original `sort-package-json` package, or integrated directly into your own tools and workflows in Node.js compatible environments.
 
 > **Note on Compatibility**: `oxc-project/sort-package-json` is not strictly compatible with the original `sort-package-json` npm package. It uses a different sorting algorithm and field order, so the output may differ from the original package.
 
