@@ -53,26 +53,26 @@
     "version": "napi version"
   },
   "dependencies": {
-    "cac": "^6.7.14",
+    "cac": "^7.0.0",
     "tinyglobby": "^0.2.15"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.4",
-    "@emnapi/core": "^1.5.0",
-    "@emnapi/runtime": "^1.5.0",
+    "@biomejs/biome": "^2.4.6",
+    "@emnapi/core": "^1.8.1",
+    "@emnapi/runtime": "^1.8.1",
     "@maxchang/biome-config": "^0.1.8",
-    "@napi-rs/cli": "^3.2.0",
-    "@napi-rs/wasm-runtime": "^1.0.4",
+    "@napi-rs/cli": "^3.5.1",
+    "@napi-rs/wasm-runtime": "^1.1.1",
     "@taplo/cli": "^0.7.0",
-    "@tybys/wasm-util": "^0.10.0",
-    "@types/node": "^25.3.0",
+    "@tybys/wasm-util": "^0.10.1",
+    "@types/node": "^25.3.3",
     "chalk": "^5.6.2",
-    "emnapi": "^1.5.0",
-    "lint-staged": "^16.2.7",
+    "emnapi": "^1.8.1",
+    "lint-staged": "^16.3.2",
     "npm-run-all2": "^8.0.4",
     "simple-git-hooks": "^2.13.1",
     "sort-package-json": "^3.6.1",
-    "typescript": "^5.9.2",
+    "typescript": "^5.9.3",
     "vitest": "^4.0.18"
   },
   "simple-git-hooks": {
@@ -112,5 +112,5 @@
   "engines": {
     "node": ">= 10"
   },
-  "packageManager": "pnpm@10.30.2"
+  "packageManager": "pnpm@10.30.3"
 }
