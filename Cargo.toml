@@ -9,7 +9,7 @@ crate-type = ["cdylib"]
 [dependencies]
 napi = "3.0.0"
 napi-derive = "3.0.0"
-sort-package-json = "0.0.10"
+sort-package-json = "0.0.12"
 
 [build-dependencies]
 napi-build = "2"
